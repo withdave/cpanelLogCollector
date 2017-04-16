@@ -45,7 +45,7 @@ function get_server_memory_usage(){
 
 // Insert values into the database
 $sql = "INSERT INTO Performance (timestamp, cpu_1, cpu_5, cpu_15, ram)
-VALUES (now(), " . number_format(get_server_memory_usage(), 2) . ", " . get_server_cpu_usage_array()[0] . ", " . get_server_cpu_usage_array()[1] . ", " . get_server_cpu_usage_array()[2] . ")";
+VALUES (now(), " . get_server_cpu_usage_array()[0] . ", " . get_server_cpu_usage_array()[1] . ", " . get_server_cpu_usage_array()[2] . ", " . number_format(get_server_memory_usage(), 2) . ")";
 
 
 try {
